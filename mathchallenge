@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            margin: 20px;
+            width: 60%;
+            max-width: 400px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Math Challenge</h1>
+    <p>To continue, solve the following integral:</p>
+
+    <!-- Imgur Embed Code for the Integral Image -->
+    <blockquote class="imgur-embed-pub" lang="en" data-id="a/gLIjIQb" data-context="false">
+        <a href="//imgur.com/a/gLIjIQb"></a>
+    </blockquote>
+    <script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+    <p>Once you solve it, enter the correct value below:</p>
+
+    <input type="text" id="answer" placeholder="Enter your answer here...">
+    <button onclick="checkAnswer()">Submit Answer</button>
+    <p id="error" class="error"></p>
+
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById("answer").value.trim().toLowerCase();
+            var correctAnswer = "3pi";
+            var numericAnswer = 3 * Math.PI;
+
+            // Checking for different formats of the correct answer
+            if (answer === correctAnswer || answer === "3 * pi" || parseFloat(answer) === numericAnswer) {
+                window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScFbKcgiy868XZzA63Cq66_SAiBpxlQbRqihjNaxkaYY2trHg/viewform?usp=sharing";
+            } else {
+                document.getElementById("error").innerText = "Oops! That's not the correct answer. Try again.";
+            }
+        }
+    </script>
+
+</body>
+</html>
